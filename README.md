@@ -1,4 +1,4 @@
-# CAB383 | Game AI
+# IGB383 | Game AI
 ## Assignment 1 | A-star & FSM's
 ### A-star Algorithm
 For the A-star algorithm, I revisited the Fibonnaci Heap with the knowledge I may use it one day.
