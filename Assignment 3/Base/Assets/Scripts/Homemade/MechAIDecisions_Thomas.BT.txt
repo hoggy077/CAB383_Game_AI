@@ -1,0 +1,155 @@
+tree("Root")
+	repeat
+		mute
+			parallel
+				tree "Observe"
+				tree "General"
+				tree "Combat"
+				tree "Weapons"
+
+tree("General")
+	repeat
+		mute
+			fallback
+				tree "Flee"
+				tree "Roam"
+				tree "Restock"
+				tree "Investigate"
+
+tree("Weapons")
+	repeat
+		mute
+			parallel
+				tree "BLaser"
+				tree "Laser"
+				tree "Missile"
+				tree "Shells"
+
+tree("Observe")
+	repeat
+		mute
+			parallel
+				tree "Engage"
+				checkForCrate()
+				tree "POIs"
+
+tree("POIs")
+	while
+		sequence
+			not inCombat()
+		repeat
+			findPOI()
+
+tree("Combat")
+	repeat
+		mute
+			fallback
+				tree "CombatRestock"
+				tree "Fight"
+
+
+tree("Engage")
+	while
+		sequence
+			not inCombat()
+			combatReady()
+		repeat
+			Engage_()
+
+tree("Flee")
+	while
+		sequence
+			inCombat()
+			tagTeamed()
+			not combatReady()
+		repeat
+			Flee_()
+
+tree("Roam")
+	while 
+		sequence
+			not inCombat()
+			not hasPOI()
+			combatReady()
+		repeat
+			Roam_()
+
+tree("Restock")
+	while
+		sequence
+			foundCrates()
+			not combatReady()
+		repeat
+			Restock_()
+
+tree("Investigate")
+	while
+		sequence
+			hasPOI()
+			not inCombat()
+			combatReady()
+		repeat
+			Investigate_()
+
+
+
+
+tree("BLaser")
+	repeat
+		mute
+			fallback
+				tree "BLaser_f"
+				tree "BLaser_s"
+
+tree("BLaser_f")
+	while
+		sequence
+			canBeFired_bl()
+		repeat 1
+			FirinMaLaser_start()
+
+tree("BLaser_s")
+	while
+		sequence
+			not canBeFired_bl()
+		repeat 1
+			FirinMaLaser_stop()
+
+tree("Laser")
+	while
+		sequence
+			canBeFired_l()
+		repeat 1
+			fireLaser()
+
+tree("Missile")
+	while
+		sequence
+			canBeFired_m()
+		repeat 1
+			fireMissiles()
+
+tree("Shells")
+	while
+		sequence
+			canBeFired_s()
+		repeat
+			fireShells()
+
+tree("CombatRestock")
+	while
+		sequence
+			foundCrates()
+			inCombat()
+			needCombatRestock()
+		repeat
+			Restock_()
+
+tree("Fight")
+	while
+		sequence
+			inCombat()
+			not tagTeamed()
+			not needCombatRestock()
+		repeat
+			Fight_()

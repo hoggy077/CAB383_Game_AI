@@ -1,0 +1,58 @@
+Hit & Run (The scout main)
+3rd partying (the fortnite player)
+Camp (The cod player)
+
+General player shits
+ - Sprinting is a must
+   - Disengage/Engage
+   - to grab crates
+ - Aiming & moving should be disconnected
+ - Predictive aiming
+
+General
+-------------
+ - Sprinting (because the player can, i should)
+ - Sound reaction (to walking) (POI system)
+
+
+USE SPRINTING
+No one else has sprinting, but the player can sprint so we should
+
+
+Roam
+-------------
+ - Walk around and look for enemies
+-> (on POI) goto Investigate
+
+
+Investigate
+-------------
+ - Get LOS on the POI
+-> Return to Roam/Attack based on 
+
+
+Attacking
+-------------
+ - Predictive Aiming (Variation needed) (attacking)
+ - 3rd partying (engage if more than 1 AI is near eachother)
+ - Reactive counterplay (run out of missile range when happening)
+-> return to Roam
+
+
+Restock_w_attack
+-------------
+ - Move to a crate, but maintain attacking with the target
+-> Return to Attack
+
+
+Restock_g
+-------------
+ - Get the nearest crate for hp/ammo
+-> Return to Roam 
+
+
+Fleeing
+-------------
+ - conditions
+   - Low health, getting 3rd partied
+ - get to a health box
